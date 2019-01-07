@@ -181,12 +181,19 @@ if __name__ == "__main__":
         }
     ]
 
-
-
 graph = load_nodes(GEOJSON_DIST_POINTS, GEOJSON_CABINETS)
 
-graph2 = steiner_tree(graph, graph.nodes, weight = 'distance') 
+#graph2 = metric_closure(graph, weight='distance')
 
-plt.figure()
-nx.draw_networkx(graph2)
-plt.show()
+#graph2 = steiner_tree(graph, graph.nodes, weight = 'distance') 
+
+graph2 = nx.complete_graph(graph)
+
+print(graph2.edges())
+
+# graph3 = nx.mst(graph2)
+
+# plt.figure()
+# nx.draw_networkx(graph2)
+# plt.show()
+
