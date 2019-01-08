@@ -49,8 +49,8 @@ class Graph:
 	# (uses path compression technique) 
     def find(self, parent, i): 
         print('find for {} is {}'.format(parent, i))
-        catch = parent[i]
-        print('parent[i] is {}'.format(catch))
+        #catch = parent[i]
+        #print('parent[i] is {}'.format(catch))
         if parent[i] == i: 
             return i, print('returned (if) {}'.format(i)) 
         return self.find(parent, parent[i]), print('returned self.find({}, {})'.format(parent, parent[i]))  
@@ -250,23 +250,23 @@ if __name__ == "__main__":
         }
     ]
   
-# #Driver code 
-# g = Graph(4) 
-# g.addEdge(0, 1, 10) 
-# g.addEdge(0, 2, 6) 
-# g.addEdge(0, 3, 5) 
-# g.addEdge(1, 3, 15) 
-# g.addEdge(2, 3, 4) 
-# #print(g.graph)
-# test = g.KruskalMST()
-# # print(test)
+#Driver code 
+g = Graph(4) 
+g.addEdge(0, 1, 10) 
+g.addEdge(0, 2, 6) 
+g.addEdge(0, 3, 5) 
+g.addEdge(1, 3, 15) 
+g.addEdge(2, 3, 4) 
+#print(g.graph)
+test = g.KruskalMST()
+# print(test)
 
-network = load_nodes(GEOJSON_DIST_POINTS)
+# network = load_nodes(GEOJSON_DIST_POINTS)
 
-#test = network.find_unique_edges()
+# #test = network.find_unique_edges()
 
-pprint.pprint(network.graph)
+# pprint.pprint(network.graph)
 
-mst = network.KruskalMST() 
+# mst = network.KruskalMST() 
 
-# pprint.pprint(mst)
+# # pprint.pprint(mst)
